@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: rob;
+    src: url(assets/fonts/Roboto-Regular.ttf);
+}
+
+:root {
+    --Tomato: hsl(4, 100%, 67%);
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+
+p, h1, h2, h3, h4, li {
+    cursor: default;
+}
+
+body {
+    background-color: var(--CharcoalGrey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.container { /* CONTAINER BOX ------------------------------------------------*/
+    display: flex;
+    background-color: white;
+    border-radius: 24px;
+    padding: 20px;
+    height: 100%;
+    width: 50%;
+}
+.left { /* LEFT DESCRIPTION ------------------------------------------------*/
+    padding: 40px;
+}
+.left > * {
+    font-family: rob;
+}
+.left h2 { /* TITLE */
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+.left p { /* JOIN */
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.left ul { /* LIST OF UPDATES */
+    margin-bottom: 60px;
+    list-style-image: url(assets/images/correct.svg);
+}
+.left ul li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    transition: all 0.4s
+}
+
+
+
+/* EMAIL ADDRES BUTTON ------------------------------------------------*/
+/* .label {} */
+
+.labels label, .labels #fail {
+    font-weight: 600;
+    font-size: 14px;
+}
+.labels #fail {
+    display: none;
+    color: var(--Tomato);
+    margin: 0;
+    transition: all 0.4s
+}
+#emailaddress {
+    border: 1px solid var(--Grey);
+    border-radius: 6px;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 30px;
+    padding: 20px;
+    font-size: 18px;
+    opacity: 1;
+    cursor: text;
+    transition: all 0.4s
+}
+#submit {
+    border: none;
+    width: 100%;
+    background-color: var(--CharcoalGrey);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 6px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.4s
+}
+.labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ANIMATIONS ------------------------------------------------------------------------------------------------*/
+.left ul li:hover { /* LIST */
+    font-size: 20px;
+}
+#submit:hover {
+    box-shadow: 0 0 40px 0 var(--Tomato);
+    background-color: var(--Tomato);
+    font-size: 19px;
+}
+#emailaddress:focus {
+    border: 1px solid var(--Grey);
+    background-color: white;
+}
+#emailaddress:focus + #fail {
+    display: none;
+}
+
+
+
+
+
+
+
+/* SUCCESS STATE FOR SEPERATE PAGE ------------------------------------------------------------------------------------------------*/
+.outer {
+    background-color: var(--DarkSlateGrey);
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+.containerbox {
+    background-color: white;
+    border-radius: 24px;
+    padding: 60px;
+    max-width: 30%;
+    max-height: 100%;
+}
+.containerbox > * {
+    font-family: rob;
+}
+.correctmark {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 40px;
+}
+.thanks {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+#desc {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+#desc span {
+    font-weight: 800;
+}
+#btn {
+    width: 100%;
+    padding: 20px;
+    font-size: 22px;
+    background-color: var(--DarkSlateGrey);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: all 0.4s
+}
+
+
+/* ANIMATIONS  ------------------------------------------------------------------------------------------------*/
+#btn:hover {
+    font-size: 24px;
+    box-shadow: 0 0 40px 0 var(--Tomato);
+    background-color: var(--Tomato);
+}
+
+
+
+/* MEDIA QUERY FOR IPHONES */
+@media only screen and (orientation: portrait) {
+    body {
+        display: block;
+        margin: 0;
+    }
+    .show {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    .right img {
+        display: none;
+    }
+}
